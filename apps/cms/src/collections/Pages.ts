@@ -4,7 +4,7 @@ import { Image } from '../blocks/Image';
 import { CallToAction } from '../blocks/CallToAction';
 import { Content } from '../blocks/Content';
 import { mediaSlug } from './Media';
-import { authenticatedAndAdmin, pageIsPublic } from '../access/index';
+import { authenticatedAndAdmin, authenticatedAndContentManager, pageIsPublic } from '../access/index';
 
 export const pagesSlug = 'pages';
 export const Pages: CollectionConfig = {
@@ -14,12 +14,12 @@ export const Pages: CollectionConfig = {
     },
     access: {
         read: ({ req }) => {
-            if (authenticatedAndAdmin({ req })) return true;
+            if (authenticatedAndContentManager({ req })) return true;
             return pageIsPublic();
         },
-        create: authenticatedAndAdmin,
-        update: authenticatedAndAdmin,
-        delete: authenticatedAndAdmin,
+        create: authenticatedAndContentManager,
+        update: authenticatedAndContentManager,
+        delete: authenticatedAndContentManager,
     },
     fields: [
         {

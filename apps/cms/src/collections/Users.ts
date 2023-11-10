@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload/types';
-import { authenticatedAndAdmin } from '../access/index';
+import { authenticatedAndAdmin, authenticatedAndContentManager } from '../access/index';
 
 export const usersSlug = 'users';
 const Users: CollectionConfig = {
@@ -10,7 +10,7 @@ const Users: CollectionConfig = {
     },
     access: {
         read: authenticatedAndAdmin,
-        admin: authenticatedAndAdmin,
+        admin: authenticatedAndContentManager,
         create: authenticatedAndAdmin,
         delete: authenticatedAndAdmin,
         update: authenticatedAndAdmin,
@@ -29,6 +29,10 @@ const Users: CollectionConfig = {
                 {
                     label: 'Admin',
                     value: 'admin',
+                },
+                {
+                    label: 'Content Manager',
+                    value: 'content-manager',
                 },
                 {
                     label: 'User',

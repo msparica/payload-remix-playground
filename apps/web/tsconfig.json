@@ -15,6 +15,6 @@
       "~/*": ["./app/*"]
     },
     "noEmit": true,
-    "moduleResolution": "node"
+    "moduleResolution": "NodeNext"
   }
 }

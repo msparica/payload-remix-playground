@@ -9,6 +9,7 @@ import Pages from './collections/Pages';
 const config = buildConfig({
     admin: {
         user: Users.slug,
+		
     },
     collections: [Users, Media, Pages],
     typescript: {

@@ -8,7 +8,7 @@ export default function Index() {
 
     const [{ data }] = matches;
     const { pages, user } = (data as RootLoaderData) || {};
-
+	console.log(matches);
     return !pages ? (
         <div></div>
     ) : (
