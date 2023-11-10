@@ -2,7 +2,7 @@ import type { Page } from '@org/cms';
 import { RichText } from '../RichText';
 
 type ContentTypeProps = Page['layout'][0];
-export const Content = (props: ContentTypeProps) => {
+export const Content : React.FC<ContentTypeProps> = (props: ContentTypeProps) => {
     if (props.blockType !== 'content') return null;
     const { content } = props;
 
