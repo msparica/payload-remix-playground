@@ -1,4 +1,5 @@
 import type { Block } from 'payload/types';
+import { slateEditor } from "@payloadcms/richtext-slate";
 
 export const Image: Block = {
     slug: 'image',
@@ -38,9 +39,11 @@ export const Image: Block = {
             name: 'caption',
             label: 'Caption',
             type: 'richText',
-            admin: {
-                elements: ['link'],
-            },
+			editor: slateEditor({
+				admin: {
+					elements: ['link'],
+				},
+			})
         },
     ],
 };

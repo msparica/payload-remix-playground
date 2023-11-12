@@ -35,7 +35,10 @@
     },
     "dependencies": {
         "@org/ui": "workspace:*",
-        "payload": "^1.15.8"
+        "@payloadcms/bundler-webpack": "^1.0.5",
+        "@payloadcms/db-mongodb": "^1.0.8",
+        "@payloadcms/richtext-slate": "^1.1.0",
+        "payload": "~2.0.15"
     },
     "devDependencies": {
         "@org/shared": "workspace:*",

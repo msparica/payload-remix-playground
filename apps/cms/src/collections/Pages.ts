@@ -29,12 +29,6 @@ export const Pages: CollectionConfig = {
             required: true,
         },
         {
-            name: 'image',
-            label: 'Featured Image',
-            type: 'upload',
-            relationTo: mediaSlug,
-        },
-        {
             name: 'public',
             label: 'Public',
             type: 'checkbox',

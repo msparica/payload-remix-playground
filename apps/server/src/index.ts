@@ -28,7 +28,6 @@ if (fs.existsSync(localEnvFilePath)) {
 	}
 }
 
-const MONGODB_URL = process.env.MONGODB_URL ?? "";
 const PAYLOADCMS_SECRET = process.env.PAYLOADCMS_SECRET ?? "";
 const ENVIRONMENT = process.env.NODE_ENV;
 
@@ -59,11 +58,11 @@ app.use(
 
 payload.init({
 	express: app,
-	mongoURL: MONGODB_URL,
 	secret: PAYLOADCMS_SECRET,
 	onInit: () => {
 		payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
 	},
+	
 }).then(() => {
 
 	app.use(payload.authenticate);
